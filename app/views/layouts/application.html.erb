@@ -8,8 +8,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= link_to_unless_current "Strona główna",   :action => "index"  %> |
+  <%= link_to_unless_current "O nas",   :action => "about" %> |
+  <%= link_to_unless_current "Pomoc",  :action => "help"  %> |
 
-<%= yield %>
+  <%= yield %>
 
 </body>
 </html>
