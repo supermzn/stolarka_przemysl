@@ -8,11 +8,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+
+<!-- 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> -->
+
+
+
   <%= link_to_unless_current "Strona główna",   :action => "index"  %> |
   <%= link_to_unless_current "O nas",   :action => "about" %> |
   <%= link_to_unless_current "Pomoc",  :action => "help"  %> |
-
-  <%= yield %>
-
+ <div class="container">
+	<div class="well">
+	  <strong>Success!</strong> Indicates a successful or positive action.
+	</div>
+	<div class="jumbotron">
+	  <%= yield %>
+  </div>
+</div>
 </body>
 </html>
