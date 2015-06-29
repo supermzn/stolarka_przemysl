@@ -9,27 +9,34 @@
 </head>
 <body>
 
+	<div class="container">
+	  <nav class="navbar navbar-inverse">
+	    <div class="container-fluid">
+	      <div>
+	        <ul class="nav navbar-nav">
+	          <!-- <li class="active"><a href="#">Home</a></li> -->
 
+	          <li class="<%= 'active' if current_page?(action: 'index') %>">
+		          <%= link_to "Strona główna",   :action => "index"  %>
+	          </li>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	          <li class="<%= 'active' if current_page?(action: 'about') %>">
+	          	<%= link_to "O nas",   :action => "about" %>
+	          </li>
 
+	          <li class="<%= 'active' if current_page?(action: 'help') %>">
+	          	<%= link_to "Pomoc",  :action => "help"  %>
+	          </li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+  </div>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-
-
-  <%= link_to_unless_current "Strona główna",   :action => "index"  %> |
-  <%= link_to_unless_current "O nas",   :action => "about" %> |
-  <%= link_to_unless_current "Pomoc",  :action => "help"  %> |
  <div class="container">
-	<div class="well">
-	  <strong>Success!</strong> Indicates a successful or positive action.
-	</div>
 	<div class="jumbotron">
 	  <%= yield %>
+	  <%= image_tag "The-Doors-Wallpapers-3.jpg" %>
   </div>
 </div>
 </body>
