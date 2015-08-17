@@ -1,0 +1,9 @@
+<h2> Hello </h2>
+
+<div><%= h flash[:notice] %></div>
+<br/>
+<% if current_user != nil %>
+  <%= link_to "Wyloguj", logout_path %>
+<% else %>
+  <%= link_to "Zaloguj", login_path %>
+<% end %>

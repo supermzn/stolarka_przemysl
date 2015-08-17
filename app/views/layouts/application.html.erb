@@ -16,18 +16,25 @@
 	        <ul class="nav navbar-nav">
 	          <!-- <li class="active"><a href="#">Home</a></li> -->
 
-	          <li class="<%= 'active' if current_page?(action: 'index') %>">
-		          <%= link_to "Strona główna",   :action => "index"  %>
+	          <li class="<%= 'active' if current_page?(controller: 'site', action: 'index') %>">
+		          <%= link_to "Strona główna",  :controller => 'site', :action => "index"  %>
 	          </li>
 
-	          <li class="<%= 'active' if current_page?(action: 'about') %>">
-	          	<%= link_to "O nas",   :action => "about" %>
+	          <li class="<%= 'active' if current_page?(controller: 'site', action: 'about') %>">
+	          	<%= link_to "O nas",  :controller => 'site', :action => "about" %>
 	          </li>
 
-	          <li class="<%= 'active' if current_page?(action: 'help') %>">
-	          	<%= link_to "Pomoc",  :action => "help"  %>
+	          <li class="<%= 'active' if current_page?(controller: 'site', action: 'help') %>">
+	          	<%= link_to "Pomoc", :controller => 'site', :action => "help"  %>
 	          </li>
 	        </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if !current_user %>
+              <li><%= link_to "Login", :controller => 'session', :action => "new"  %></li>
+            <% else %>
+              <li><%= link_to "Logout", :controller => 'session', :action => "destroy"  %></li>
+            <% end %>
+          </ul>
 	      </div>
 	    </div>
 	  </nav>
@@ -36,7 +43,7 @@
  <div class="container">
 	<div class="jumbotron">
 	  <%= yield %>
-	  <%= image_tag "The-Doors-Wallpapers-3.jpg" %>
+	  <%= link_to(image_tag("The-Doors-Wallpapers-3.jpg", size: '400x300'),controller: 'site',  :action => "doors")  %>
   </div>
 </div>
 </body>
