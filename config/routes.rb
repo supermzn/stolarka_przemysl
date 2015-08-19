@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
+  # get 'doors/new'
+
+  # get 'doors/create'
+
+  # get 'doors/show'
+
   root 'site#index'
+
+  resources :doors
 
   get 'users/new'
 
