@@ -1,4 +1,8 @@
 class DoorsController < ApplicationController
+  def index
+  	@door = Door.all
+  end
+
   def new
   	@door = Door.new
   end
@@ -14,7 +18,8 @@ class DoorsController < ApplicationController
   end
 
   def show
-  	@door = Door.all
+  	# @door = Door.all
+  	@door = Door.find(params[:id])
   end
 
   private
