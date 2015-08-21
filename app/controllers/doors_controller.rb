@@ -4,10 +4,14 @@ class DoorsController < ApplicationController
 
   def index
   	@door = Door.all
+  	###############
+  	@title = "Index"
   end
 
   def new
   	@door = Door.new
+  	#######################
+  	@title = "Utwórz nowe"
   	add_breadcrumb "Utwórz nowe", :new_door_path
   end
 
@@ -23,10 +27,14 @@ class DoorsController < ApplicationController
 
   def show
   	add_breadcrumb "Przegląd", door_path(@door)
+  	#######################
+  	@title = "Przegląd"
   end
 
   def edit
   	add_breadcrumb "Edytuj", :edit_door_path
+  	#######################
+  	@title = "Edytuj"
   end
 
   def update

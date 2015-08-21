@@ -1,9 +1,26 @@
 <h1>Oto nasze drzwi</h1>
 
-<iframe src="https://www.google.com/maps/d/embed?mid=zb8DVjirvEGg.kpdyf6j9LK5A" width=85% height="480"></iframe>
+  <script>
+  $(function() {
+    $( "#tabs" ).tabs();
+  });
+  </script>
 
-<% @door.each do |d| %>
-	<div class="well well-sm">
-	 	<h3><u><%= link_to d.title, door_path(d) %></u></h3>
- 	</div>
- <% end %> 
+  <div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Lista</a></li>
+    <li><a href="#tabs-2">Mapa</a></li>
+  </ul>
+  <div id="tabs-1">
+		<% @door.each do |d| %>
+			<div class="well well-sm">
+			 	<h3><u><%= link_to d.title, door_path(d) %></u></h3>
+		 	</div>
+		 <% end %> 
+  </div>
+  <div id="tabs-2">
+	  <iframe src="https://www.google.com/maps/d/embed?mid=zb8DVjirvEGg.kpdyf6j9LK5A" width=100% height="480"></iframe>
+  </div>
+</div>
+
+
