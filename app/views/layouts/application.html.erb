@@ -14,7 +14,6 @@
 	    <div class="container-fluid">
 	      <div>
 	        <ul class="nav navbar-nav">
-	          <!-- <li class="active"><a href="#">Home</a></li> -->
 
 	          <li class="<%= 'active' if current_page?(controller: 'site', action: 'index') %>">
 		          <%= link_to "Strona główna",  :controller => 'site', :action => "index"  %>
@@ -38,6 +37,7 @@
 	      </div>
 	    </div>
 	  </nav>
+	  	      <%= render_breadcrumbs :separator => " / " %>
 
   </div>
 

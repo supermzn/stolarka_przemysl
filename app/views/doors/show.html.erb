@@ -1,6 +1,10 @@
 <h1><%= @door.title %></h1>
 <h3><%= @door.address %></h3>
-<p><%= @door.description %></p>
+<p><%= @door.description %></br>
+<%= link_to "Edytuj", edit_door_path(@door) %> | 
+<%= link_to "Usuń", door_path(@door), method: :delete, data: { confirm: "Czy na pewno chcesz usunąć?" } %>
+</p>
+
 
  
 
