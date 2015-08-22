@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery-ui
+// It shout be also specified for example button or tabs for fasteness but rails couldn't see these files
 
 //= require bootstrap-sprockets
 //= require jquery_ujs
