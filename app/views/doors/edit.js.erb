@@ -1,0 +1,4 @@
+// hide Edit link, then hide all description, then render form filled for eddition
+$('#edit_door').hide().after($('#door_description').hide()).after('<%= j render("form") %>')
+$('#edit_door').after("<%= j link_to "Anuluj", door_path(@door), id: "cancel_edit_door" %>")
+// $('#cancel_edit_door').after($('#door_description').show()).after('<%= j render("form") %>')

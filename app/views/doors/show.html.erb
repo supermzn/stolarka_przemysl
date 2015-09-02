@@ -1,7 +1,10 @@
-<h1><%= @door.title %></h1>
-<h3><%= @door.address %></h3>
-<p><%= @door.description %></br>
-<%= link_to "Edytuj", edit_door_path(@door) %> | 
+<div id="door_description">
+	<h1><%= @door.title %></h1>
+	<h3><%= @door.address %></h3>
+	<p><%= @door.description %></br>
+</div>
+
+<%= link_to "Edytuj", edit_door_path(@door), id: "edit_door", remote: :true %>
 <%= link_to "Usuń", door_path(@door), method: :delete, data: { confirm: "Czy na pewno chcesz usunąć?" } %>
 </p>
 
