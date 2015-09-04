@@ -14,6 +14,8 @@ gem 'sdoc',         '0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem "breadcrumbs_on_rails"
 gem 'jquery-ui-rails'
+gem 'geocoder'
+gem 'gmaps4rails'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'

@@ -63,8 +63,10 @@ GEM
     debugger-linecache (1.2.0)
     erubis (2.7.0)
     execjs (2.6.0)
+    geocoder (1.2.9)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     i18n (0.7.0)
     jbuilder (2.2.3)
       activesupport (>= 3.0.0, < 5)
@@ -169,6 +171,8 @@ DEPENDENCIES
   breadcrumbs_on_rails
   byebug (= 3.4.0)
   coffee-rails (= 4.1.0)
+  geocoder
+  gmaps4rails
   jbuilder (= 2.2.3)
   jquery-rails (= 4.0.3)
   jquery-ui-rails

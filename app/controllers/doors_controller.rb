@@ -4,6 +4,11 @@ class DoorsController < ApplicationController
 
   def index
   	@door = Door.all
+  	@hash = Gmaps4rails.build_markers(@door) do |d, marker|
+		  marker.lat d.latitude
+		  marker.lng d.longtitude
+		  marker.infowindow d.description
+		end
   	###############
   	@title = "Index"
   end
