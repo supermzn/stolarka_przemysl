@@ -1,16 +1,12 @@
 class DoorsController < ApplicationController
   before_action :find_door, only: [:show, :destroy, :edit, :update]
   before_action :street_only, only: [:show]
-  before_action :protect, only: [:edit]
+  before_action :protect, only: [:edit, :new, :destroy]
   add_breadcrumb "Lista Drzwi", :doors_path
 
   def index
   	@door = Door.all
-  	@hash = Gmaps4rails.build_markers(@door) do |d, marker|
-		  marker.lat d.latitude
-		  marker.lng d.longitude
-		  marker.infowindow generate_info_window(d)
-		end
+  	create_markers(@door)
   	###############
   	@title = "Index"
   end
@@ -34,6 +30,7 @@ class DoorsController < ApplicationController
 
   def show
   	add_breadcrumb "Przegląd", door_path(@door)
+  	create_markers(@door)
   	#######################
   	@title = "Przegląd"
   end
@@ -64,7 +61,7 @@ class DoorsController < ApplicationController
   	end
 
   	def protect
-  		unless current_user
+  		if current_user.nil?
   			flash[:notice] = "Proszę się zalogować!"
   			redirect_to doors_path
   			return false
@@ -81,7 +78,15 @@ class DoorsController < ApplicationController
 	  	@door = Door.find(params[:id])
   	end
 
+  	def create_markers(doors)
+	  	@hash = Gmaps4rails.build_markers(doors) do |d, marker|
+			  marker.lat d.latitude
+			  marker.lng d.longitude
+			  marker.infowindow generate_info_window(d)
+			end
+  	end
+
   	def generate_info_window(door)
-  		info = "<div><b>#{door.address}</b><br/>Super drzwi<br/><a href='doors/#{door.id}'>Zobacz więcej</a></div><div align='right'><img src='/images/doors/#{door.image}' width='70' height='80'/></div>"
+  		info = "<div><b>#{door.address}</b><br/>Super drzwi<br/><a href='/doors/#{door.id}'>Zobacz więcej</a></div><div align='right'><img src='/images/doors/#{door.image}' width='70' height='80'/></div>"
   	end
 end

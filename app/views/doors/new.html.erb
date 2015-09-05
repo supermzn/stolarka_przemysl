@@ -1,3 +1,8 @@
 <h2>Dodaj nowe drzwi</h2>
-<p>Wypełnij formularz</p>
-<%= render 'form' %>
+<% if current_user %>
+	<p>Wypełnij formularz</p>
+	<%= render 'form' %>
+<% else %>
+	Aby dodać nowe drzwi należy się zalogować! <%= link_to "Zaloguj", login_path %><br/>
+<% end %>
+
