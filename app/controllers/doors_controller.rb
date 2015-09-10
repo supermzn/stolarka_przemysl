@@ -44,6 +44,9 @@ class DoorsController < ApplicationController
   end
 
   def update
+  	@door_all = Door.all
+  	door_xml = @door_all.to_xml
+  	IO.write("app/views/doors/door.xml", door_xml)
   	if @door.update(door_params)
   		redirect_to door_path(@door)
   	else
