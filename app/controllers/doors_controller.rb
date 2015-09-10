@@ -6,11 +6,14 @@ class DoorsController < ApplicationController
   add_breadcrumb "Lista Drzwi", :doors_path
 
   def index
-  	#@door = Door.all
-  	xslt = XML::XSLT.new
-  	xslt.xml = "app/views/doors/doors.xml"
+  	xslt = XML::XSLT.new # utworzenie obiektu typu xslt
+  	# dodanie do xslt plików xml i xsl
+  	xslt.xml = "app/views/doors/doors.xml" 
   	xslt.xsl = "app/views/doors/xsl_index.xsl"
+  	# zapis do pliku "index.html.erb" wyniku transformacji metodą serve
   	IO.write("app/views/doors/index.html.erb", xslt.serve)
+
+  	@door = Door.all
   	@hash = create_markers(@door)
   	###############
   	@title = "Index"
