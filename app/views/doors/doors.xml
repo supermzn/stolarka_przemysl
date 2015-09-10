@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doors type="array">
+  <door>
+    <id type="integer">1</id>
+    <title>Pierwsze drzwi</title>
+    <address>Mickiewicza 13, Przemyśl</address>
+    <description>Dolor laborum occupy, assumenda biodiesel velit heirloom messenger bag cred exercitation Wes Anderson. Pariatur cillum Helvetica lumbersexual ut tote bag. Vinyl heirloom normcore, bespoke listicle drinking vinegar meh nesciunt fugiat. Cardigan Bushwick fingerstache consectetur tempor, voluptate blog stumptown officia asymmetrical. Try-hard small batch eiusmod tote bag chillwave. Direct trade mixtape cred retro street art, flannel Intelligentsia chia keytar</description>
+    <created-at type="dateTime">2015-08-19T12:03:31Z</created-at>
+    <updated-at type="dateTime">2015-09-10T14:55:32Z</updated-at>
+    <latitude type="float">49.782853</latitude>
+    <longitude type="float">22.7781638</longitude>
+    <image>DSC_0174.JPG</image>
+  </door>
+  <door>
+    <id type="integer">3</id>
+    <title>Wayfarers irony sint</title>
+    <address>Kazimierza Wielkiego 30, Przemyśl</address>
+    <description>Reprehenderit qui church-key keytar, meggings aesthetic tempor exercitation est. Put a bird on it odio 8-bit retro, elit post-ironic 3 wolf moon YOLO try-hard do PBR&amp;B sustainable. Ex reprehenderit minim sint. Literally culpa seitan consectetur Bushwick bitters, messenger bag +1 heirloom Neutra readymade. Letterpress bicycle rights hella, Kickstarter quis try-hard Tumblr Banksy eu ex Vice drinking vinegar gluten-free meh et. Officia Echo Park readymade sartorial nulla, Austin adipisicing culpa aute. Health goth crucifix ugh, authentic listicle semiotics hella placeat fanny pack.
+</description>
+    <created-at type="dateTime">2015-08-21T16:35:53Z</created-at>
+    <updated-at type="dateTime">2015-09-05T13:33:25Z</updated-at>
+    <latitude type="float">49.782238</latitude>
+    <longitude type="float">22.77281</longitude>
+    <image>DSC_0230.JPG</image>
+  </door>
+  <door>
+    <id type="integer">4</id>
+    <title>Officia Echo Park</title>
+    <address>Dworskiego 13, Przemyśl</address>
+    <description>Austin art party PBR officia yr Schlitz. Letterpress single-origin coffee lomo placeat Odd Future. Velit delectus Thundercats health goth umami. Ad anim heirloom, laboris sustainable seitan American Apparel eu. Aliqua ennui cillum, pariatur VHS McSweeney's Williamsburg Schlitz wolf gluten-free trust fund tempor Etsy selvage. Shoreditch ex try-hard velit irony actually. Fanny packing cardigan magna authentic street art Wes Anderson, umami leggings dolor direct trade eiusmod elit Echo Park roof party cillum.</description>
+    <created-at type="dateTime">2015-08-21T16:36:55Z</created-at>
+    <updated-at type="dateTime">2015-09-05T15:16:50Z</updated-at>
+    <latitude type="float">49.781642</latitude>
+    <longitude type="float">22.7775207</longitude>
+    <image>DSC_0226.JPG</image>
+  </door>
+  <door>
+    <id type="integer">5</id>
+    <title>Brzydkie drzwi</title>
+    <address>Glazera 18, Przemyśl</address>
+    <description>Small batch bespoke four dollar toast meh Godard, roof party cliche. PBR&amp;B 3 wolf moon street art polaroid plaid tousled, ennui 8-bit keffiyeh tofu Carles. Meditation vegan twee, whatever Brooklyn Godard kogi tousled typewriter. Crucifix lumbersexual freegan 3 wolf moon, sriracha tousled meh.</description>
+    <created-at type="dateTime">2015-09-05T07:59:40Z</created-at>
+    <updated-at type="dateTime">2015-09-05T08:00:55Z</updated-at>
+    <latitude type="float">49.7883691</latitude>
+    <longitude type="float">22.758457</longitude>
+    <image>P1120189.JPG</image>
+  </door>
+</doors>

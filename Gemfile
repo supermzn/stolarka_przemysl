@@ -16,6 +16,7 @@ gem "breadcrumbs_on_rails"
 gem 'jquery-ui-rails'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'ruby-xslt', '~> 0.9.9'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'

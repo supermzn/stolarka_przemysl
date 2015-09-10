@@ -1,3 +1,4 @@
+require 'xml/xslt'
 class DoorsController < ApplicationController
   before_action :find_door, only: [:show, :destroy, :edit, :update]
   before_action :street_only, only: [:show]
@@ -5,7 +6,11 @@ class DoorsController < ApplicationController
   add_breadcrumb "Lista Drzwi", :doors_path
 
   def index
-  	@door = Door.all
+  	#@door = Door.all
+  	xslt = XML::XSLT.new
+  	xslt.xml = "app/views/doors/doors.xml"
+  	xslt.xsl = "app/views/doors/xsl_index.xsl"
+  	IO.write("app/views/doors/index.html.erb", xslt.serve)
   	@hash = create_markers(@door)
   	###############
   	@title = "Index"
@@ -46,7 +51,7 @@ class DoorsController < ApplicationController
   def update
   	@door_all = Door.all
   	door_xml = @door_all.to_xml
-  	IO.write("app/views/doors/door.xml", door_xml)
+  	IO.write("app/views/doors/doors.xml", door_xml)
   	if @door.update(door_params)
   		redirect_to door_path(@door)
   	else
