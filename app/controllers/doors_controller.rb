@@ -6,7 +6,7 @@ class DoorsController < ApplicationController
 
   def index
   	@door = Door.all
-  	create_markers(@door)
+  	@hash = create_markers(@door)
   	###############
   	@title = "Index"
   end
@@ -30,7 +30,9 @@ class DoorsController < ApplicationController
 
   def show
   	add_breadcrumb "Przegląd", door_path(@door)
-  	create_markers(@door)
+  	@door_all = Door.all
+  	@hash = create_markers(@door_all)
+  	@hash_single = create_markers(@door)
   	#######################
   	@title = "Przegląd"
   end
@@ -79,11 +81,12 @@ class DoorsController < ApplicationController
   	end
 
   	def create_markers(doors)
-	  	@hash = Gmaps4rails.build_markers(doors) do |d, marker|
+	  	hash = Gmaps4rails.build_markers(doors) do |d, marker|
 			  marker.lat d.latitude
 			  marker.lng d.longitude
 			  marker.infowindow generate_info_window(d)
 			end
+			return hash
   	end
 
   	def generate_info_window(door)

@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require jquery-ui
+ *= require_tree .
  *  It shout be also specified for example button or tabs for fasteness but rails couldn't see these files
 
  
@@ -18,4 +19,4 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "door_styles"
+
