@@ -1,7 +1,9 @@
-<%= simple_form_for @door do |f| %>
-	<%= f.input :image %>
-	<%= f.input :title %>
-	<%= f.input :address %>
-	<%= f.input :description %>
-	<%= f.button :submit %>
-<% end %>
+<div id="form">
+	<%= simple_form_for @door do |f| %>
+		<%= f.input :image %>
+		<%= f.input :title %>
+		<%= f.input :address %>
+		<%= f.input :description %>
+		<%= f.button :submit %>
+	<% end %>
+</div>

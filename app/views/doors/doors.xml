@@ -37,10 +37,10 @@
   <door>
     <id type="integer">5</id>
     <title>Brzydkie drzwi</title>
-    <address>Glazera 18, Przemyśl</address>
+    <address>Glazera 18</address>
     <description>Small batch bespoke four dollar toast meh Godard, roof party cliche. PBR&amp;B 3 wolf moon street art polaroid plaid tousled, ennui 8-bit keffiyeh tofu Carles. Meditation vegan twee, whatever Brooklyn Godard kogi tousled typewriter. Crucifix lumbersexual freegan 3 wolf moon, sriracha tousled meh.</description>
     <created-at type="dateTime">2015-09-05T07:59:40Z</created-at>
-    <updated-at type="dateTime">2015-09-10T18:27:00Z</updated-at>
+    <updated-at type="dateTime">2015-09-11T17:36:10Z</updated-at>
     <latitude type="float">49.7883691</latitude>
     <longitude type="float">22.758457</longitude>
     <image>https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fth04.deviantart.net%2Ffs25%2FPRE%2Fi%2F2008%2F096%2F0%2F1%2FAncient_Doors_IV_by_jirizarry.jpg&amp;f=1</image>

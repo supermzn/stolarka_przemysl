@@ -2,6 +2,11 @@
 // They will automatically be included in application#css#
 // You can use Sass (SCSS) here: http://sass-lang#com/
 
+#form, #cancel_edit_door{
+  display:none;
+}
+
+
 .slider {
   margin: 10px 0;
   width: 580px; /* Update to your slider width */

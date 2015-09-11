@@ -1,3 +1,14 @@
-// hide Edit link, then hide all description, then render form filled for eddition
-$('#edit_door').after("<%= j link_to " Anuluj", door_path(@door), id: "cancel_edit_door", class: "glyphicon glyphicon-remove-sign text-warning" %>");
-$('#edit_door').hide().after($('#door_description').hide()).after('<%= j render("form") %>');
+$('#cancel_edit_door').click(function() {
+	$('#door_description').show('slow');
+	$('#edit_door').show('slow');
+	$('#cancel_edit_door').hide();
+	$('#form').hide();
+});
+
+$('#edit_door').click(function() {
+	$('#door_description').hide('slow');
+	$('#form').show('slow');
+	$('#edit_door').hide();
+	$('#cancel_edit_door').show();
+});
+
