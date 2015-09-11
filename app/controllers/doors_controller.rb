@@ -30,6 +30,7 @@ class DoorsController < ApplicationController
   	@door = Door.new(door_params)
 
   	if @door.save
+  		doors_to_xml
   		redirect_to doors_path
 		else 
 			render 'new'  		
@@ -52,10 +53,8 @@ class DoorsController < ApplicationController
   end
 
   def update
-  	@door_all = Door.all
-  	door_xml = @door_all.to_xml
-  	IO.write("app/views/doors/doors.xml", door_xml)
   	if @door.update(door_params)
+  		doors_to_xml
   		redirect_to door_path(@door)
   	else
   		render 'edit'
@@ -101,6 +100,12 @@ class DoorsController < ApplicationController
   	end
 
   	def generate_info_window(door)
-  		info = "<div><b>#{door.address}</b><br/>Super drzwi<br/><a href='/doors/#{door.id}'>Zobacz więcej</a></div><div align='right'><img src='/images/doors/#{door.image}' width='70' height='80'/></div>"
+  		info = "<div><b>#{door.address}</b><br/>Super drzwi<br/><a href='/doors/#{door.id}'>Zobacz więcej</a></div><div align='right'><img src='#{door.image}' width='70' height='80'/></div>"
+  	end
+
+  	def doors_to_xml
+	  	@door_all = Door.all
+	  	door_xml = @door_all.to_xml
+	  	IO.write("app/views/doors/doors.xml", door_xml)  		
   	end
 end
