@@ -1,4 +1,6 @@
 require 'xml/xslt'
+require 'rexml/document'
+
 class DoorsController < ApplicationController
   before_action :find_door, only: [:show, :destroy, :edit, :update]
   before_action :street_only, only: [:show]
@@ -38,6 +40,14 @@ class DoorsController < ApplicationController
   end
 
   def show
+    create_single_door_xml(@door.id)
+    xslt = XML::XSLT.new # utworzenie obiektu typu xslt
+    # dodanie do xslt plików xml i xsl
+    xslt.xml = "app/views/doors/single_door.xml" 
+    xslt.xsl = "app/views/doors/xsl_show.xsl"
+    # zapis do pliku "show.html.erb" wyniku transformacji metodą serve
+    IO.write("app/views/doors/show.html.erb", xslt.serve)
+
   	add_breadcrumb "Przegląd", door_path(@door)
   	@door_all = Door.all
   	@hash = create_markers(@door_all)
@@ -108,4 +118,12 @@ class DoorsController < ApplicationController
 	  	door_xml = @door_all.to_xml
 	  	IO.write("app/views/doors/doors.xml", door_xml)  		
   	end
+
+    def create_single_door_xml door_id
+      file = File.open 'app/views/doors/doors.xml'
+      myxml = REXML::Document.new file
+      door = myxml.elements["doors/door[id='#{door_id}']"]
+      xml_top = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+      IO.write("app/views/doors/single_door.xml", xml_top + door.to_s)
+    end
 end

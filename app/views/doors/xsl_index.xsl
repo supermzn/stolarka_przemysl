@@ -46,7 +46,7 @@
 	<xsl:for-each select="//door">
 		<div class="well well-sm">
 			<xsl:element name="a">
-			    <xsl:attribute name="href">doors/<xsl:value-of select="id"/>      
+			    <xsl:attribute name="href">/doors/<xsl:value-of select="id"/>      
 			    </xsl:attribute>
     			<u><xsl:value-of select="title" /></u>
 			</xsl:element>
@@ -54,5 +54,5 @@
 	</xsl:for-each>
 </div>
 
-</xsl:template>
+	</xsl:template>
 </xsl:stylesheet>
