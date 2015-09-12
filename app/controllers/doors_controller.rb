@@ -3,7 +3,6 @@ require 'rexml/document'
 
 class DoorsController < ApplicationController
   before_action :find_door, only: [:show, :destroy, :edit, :update]
-  before_action :street_only, only: [:show]
   before_action :protect, only: [:edit, :new, :destroy]
   add_breadcrumb "Lista Drzwi", :doors_path
 
@@ -89,12 +88,6 @@ class DoorsController < ApplicationController
   			return false
   		end
   	end
-
-  	# cuts off city part needed for geocoder and unwanted for user
-  	# example: "Ottery St Catchpole 13, Devon" => "Ottery St Catchpole 13"
-		def street_only
-			@door.address = @door.address.partition(",")[0]		
-		end
 
   	def find_door
 	  	@door = Door.find(params[:id])

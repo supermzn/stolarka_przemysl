@@ -15,27 +15,26 @@
 	<div class="row">
 		<div class="col-md-6">
 			<h1><xsl:value-of select="title"/></h1>
+			<h3><xsl:value-of select="address" /></h3>
 			<h4>
 				<b>Wspolrzedne: </b>Long: <xsl:value-of select="longitude"/> Lat: <xsl:value-of select="latitude"/>
 			</h4>
-		  <button class="prev">Previous</button>
-		  <button class="next">Next</button>
 
+			<!-- W galerii domyślnie mają się pojawić inne ujęcia drzwi, ale tego jeszcze nie ma, więc są poglądowe obrazki -->
+		  <button id="prev">Previous</button>
+		  <button id="next">Next</button>
 			<ul class="slider">
 			 <li>
-			   <img src="http://lorempixel.com/400/200/" />
+			  <img src="http://loremflickr.com/320/240/door/?random=1" />
 			 </li>
 			 <li>
-			   <img src="http://placeimg.com/400/200/any" />
+			   <img src="http://loremflickr.com/320/240/door/?random=2" />
 			 </li>
 			 <li>
-			   <img src="http://lorempixel.com/400/200/" />
+			   <img src="http://loremflickr.com/320/240/door/?random=3" />
 			 </li>
 			 <li>
-			   <img src="http://placeimg.com/400/200/animals" />
-			 </li>
-			  <li>
-			   <img src="http://localhost:3000/images/doors/DSC_0226.JPG" height="30%" width="30%" />
+			   <img src="http://loremflickr.com/320/240/door/?random=4" />
 			 </li>
 			</ul>
 		</div>
@@ -58,7 +57,7 @@
 		</div>
 		<div class="col-md-5">
 
-			  <!-- <div id="map" style='width: 100%; height: 400px;'></div> -->
+			  <div id="map" style='width: 100%; height: 400px;'></div>
 
 		</div>
 	</div>
@@ -93,7 +92,9 @@
 	<div id="admin_panel">	
 		<xsl:text disable-output-escaping="yes">
 		<![CDATA[
-		<%= render("form") %>
+		<div id="form-edit">
+			<%= render("form") %>
+		</div>
 		<% if current_user %>
 			<%= link_to " Anuluj", edit_door_path(@door), id: "cancel_edit_door", class: "glyphicon glyphicon-remove-sign text-warning", remote: :true %>
 		 <%= link_to " Edytuj", edit_door_path(@door), id: "edit_door", remote: :true, class: "glyphicon glyphicon-edit text-warning" %><br/>

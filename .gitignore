@@ -15,3 +15,7 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore xml files to generate view
+/app/views/doors/doors.xml
+/app/views/doors/single_door.xml

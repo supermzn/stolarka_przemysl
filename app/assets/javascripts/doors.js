@@ -1,60 +1,27 @@
-jQuery(document).ready(function ($) {
 
-  $('#checkbox').change(function(){
-    setInterval(function () {
-        moveRight();
-    }, 3000);
-  });
-  
-    var slideCount = $('#slider ul li').length;
-    var slideWidth = $('#slider ul li').width();
-    var slideHeight = $('#slider ul li').height();
-    var sliderUlWidth = slideCount * slideWidth;
-    
-    $('#slider').css({ width: slideWidth, height: slideHeight });
-    
-    $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
-    
-    $('#slider ul li:last-child').prependTo('#slider ul');
+// editing door (edit and cancel)
+$('#cancel_edit_door').click(function() {
+  $('#door_description').show('slow');
+  $('#edit_door').show('slow');
+  $('#cancel_edit_door').hide();
+  $('#form-edit').hide();
+});
 
-    function moveLeft() {
-        $('#slider ul').animate({
-            left: + slideWidth
-        }, 200, function () {
-            $('#slider ul li:last-child').prependTo('#slider ul');
-            $('#slider ul').css('left', '');
-        });
-    };
+$('#edit_door').click(function() {
+  $('#door_description').hide('slow');
+  $('#form-edit').show('slow');
+  $('#edit_door').hide();
+  $('#cancel_edit_door').show();
+});
 
-    function moveRight() {
-        $('#slider ul').animate({
-            left: - slideWidth
-        }, 200, function () {
-            $('#slider ul li:first-child').appendTo('#slider ul');
-            $('#slider ul').css('left', '');
-        });
-    };
-
-    $('a.control_prev').click(function () {
-        moveLeft();
-    });
-
-    $('a.control_next').click(function () {
-        moveRight();
-    });
-
-});    
-
-// //////////////////////////////////////////
-////////////////////////////////////////////
-///////////////////////////////////////////
+// gallery
 jQuery(function($) { 
 
   // settings
-  var $slider = $('.slider'); // class or id of carousel slider
-  var $slide = 'li'; // could also use 'img' if you're not using a ul
-  var $transition_time = 1000; // 1 second
-  var $time_between_slides = 2000; // 4 seconds
+  var $slider = $('.slider'); 
+  var $slide = 'li'; 
+  var $transition_time = 1000; 
+  var $time_between_slides = 2000;
 
   function slides(){
     return $slider.find($slide);
@@ -66,7 +33,7 @@ jQuery(function($) {
   slides().first().addClass('active');
   slides().first().fadeIn($transition_time);
 
-  $(".next").click(function(){
+  $("#next").click(function(){
       var $i = $slider.find($slide + '.active').index();
 
       slides().eq($i).removeClass('active');
@@ -78,7 +45,7 @@ jQuery(function($) {
       slides().eq($i + 1).addClass('active');
     });
 
-    $(".prev").click(function(){
+    $("#prev").click(function(){
       var $i = $slider.find($slide + '.active').index();
 
       slides().eq($i).removeClass('active');
@@ -91,47 +58,3 @@ jQuery(function($) {
     });
 
 });
-    
-
-
-
-
-// $('.next').click(function() {
-//   clearInterval(autoSlide);
-//   currentIndex += 1;
-//   if (currentIndex > itemAmt - 1) {
-//     currentIndex = 0;
-//   }
-//   cycleItems();
-// });
-
-// $('.prev').click(function() {
-//   clearInterval(autoSlide);
-//   currentIndex -= 1;
-//   if (currentIndex < 0) {
-//     currentIndex = itemAmt - 1;
-//   }
-//   cycleItems();
-// });
-
-
-// function slideSwitch() {
-//     var $active = $('#slideshow IMG.active');
-
-//     if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
-
-//     var $next =  $active.next().length ? $active.next()
-//         : $('#slideshow IMG:first');
-
-//     $active.addClass('last-active');
-        
-//     $next.css({opacity: 0.0})
-//         .addClass('active')
-//         .animate({opacity: 1.0}, 1000, function() {
-//             $active.removeClass('active last-active');
-//         });
-// }
-
-// $(function() {
-//     setInterval( "slideSwitch()", 3000 );
-// });
