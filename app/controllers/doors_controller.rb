@@ -103,7 +103,7 @@ class DoorsController < ApplicationController
   	end
 
   	def generate_info_window(door)
-  		info = "<div><b>#{door.address}</b><br/>Super drzwi<br/><a href='/doors/#{door.id}'>Zobacz więcej</a></div><div align='right'><img src='#{door.image}' width='70' height='80'/></div>"
+  		info = "<div><b>#{door.address}</b><br/><a href='/doors/#{door.id}'>Zobacz więcej</a></div><div align='right'><img src='#{door.image}' width='70' height='80'/></div>"
   	end
 
   	def doors_to_xml

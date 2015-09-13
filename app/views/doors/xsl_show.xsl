@@ -21,22 +21,24 @@
 			</h4>
 
 			<!-- W galerii domyślnie mają się pojawić inne ujęcia drzwi, ale tego jeszcze nie ma, więc są poglądowe obrazki -->
-		  <button id="prev">Previous</button>
-		  <button id="next">Next</button>
-			<ul class="slider">
-			 <li>
-			  <img src="http://loremflickr.com/320/240/door/?random=1" />
-			 </li>
-			 <li>
-			   <img src="http://loremflickr.com/320/240/door/?random=2" />
-			 </li>
-			 <li>
-			   <img src="http://loremflickr.com/320/240/door/?random=3" />
-			 </li>
-			 <li>
-			   <img src="http://loremflickr.com/320/240/door/?random=4" />
-			 </li>
-			</ul>
+			<div class="well well-sm">
+			  <button id="prev">Wstecz</button>
+			  <button id="next">Dalej</button>
+				<ul class="slider gallery">
+				 <li>
+				  <img src="http://loremflickr.com/320/240/door/?random=1" />
+				 </li>
+				 <li>
+				   <img src="http://loremflickr.com/320/240/door/?random=2" />
+				 </li>
+				 <li>
+				   <img src="http://loremflickr.com/320/240/door/?random=3" />
+				 </li>
+				 <li>
+				   <img src="http://loremflickr.com/320/240/door/?random=4" />
+				 </li>
+				</ul>
+			</div>
 		</div>
 		<div class="col-md-6">
 			<img>

@@ -1,18 +1,20 @@
 
 // editing door (edit and cancel)
-$('#cancel_edit_door').click(function() {
-  $('#door_description').show('slow');
-  $('#edit_door').show('slow');
-  $('#cancel_edit_door').hide();
-  $('#form-edit').hide();
-});
-
-$('#edit_door').click(function() {
-  $('#door_description').hide('slow');
-  $('#form-edit').show('slow');
-  $('#edit_door').hide();
-  $('#cancel_edit_door').show();
-});
+jQuery(function($) {
+  $('#cancel_edit_door').click(function() {
+    $('#door_description').show('slow');
+    $('#edit_door').show('slow');
+    $('#cancel_edit_door').hide();
+    $('#form-edit').hide();
+  });
+  
+  $('#edit_door').click(function() {
+    $('#door_description').hide('slow');
+    $('#form-edit').show('slow');
+    $('#edit_door').hide();
+    $('#cancel_edit_door').show();
+  });
+})
 
 // gallery
 jQuery(function($) { 
