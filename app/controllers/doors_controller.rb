@@ -32,7 +32,10 @@ class DoorsController < ApplicationController
 
   	if @door.save
   		doors_to_xml
-  		redirect_to doors_path
+      respond_to do |format|
+    		format.html { redirect_to doors_path }
+        format.js { render 'index' }
+      end
 		else 
 			render 'new'  		
   	end
@@ -64,7 +67,10 @@ class DoorsController < ApplicationController
   def update
   	if @door.update(door_params)
   		doors_to_xml
-  		redirect_to door_path(@door)
+      respond_to do |format|
+        format.html { redirect_to doors_path }
+        format.js { doors_to_xml}
+      end
   	else
   		render 'edit'
   	end
@@ -72,6 +78,7 @@ class DoorsController < ApplicationController
 
   def destroy
   	@door.destroy
+    doors_to_xml
   	redirect_to doors_path
   end
 

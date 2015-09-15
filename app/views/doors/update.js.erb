@@ -1,0 +1,6 @@
+
+$('.submit').click(function() {
+   $('#form-edit').hide('slow');
+   $('#cancel_edit_door').hide();
+   $('#door_description').replaceWith("<%= j render 'show' %>");
+});

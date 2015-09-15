@@ -24,7 +24,7 @@
 			<div class="well well-sm">
 			  <button id="prev">Wstecz</button>
 			  <button id="next">Dalej</button>
-				<ul class="slider gallery">
+				<ul class="slider">
 				 <li>
 				  <img src="http://loremflickr.com/320/240/door/?random=1" />
 				 </li>
@@ -59,7 +59,7 @@
 		</div>
 		<div class="col-md-5">
 
-			  <div id="map" style='width: 100%; height: 400px;'></div>
+			  <!-- <div id="map" style='width: 100%; height: 400px;'></div> -->
 
 		</div>
 	</div>
