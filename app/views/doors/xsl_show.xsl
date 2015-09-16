@@ -3,7 +3,7 @@
 
 
 <xsl:template match="/door">
-
+<!-- część kodu (js/ruby) musiały zostać przeklejone jako czysty tekst  -->
 	<xsl:text disable-output-escaping="yes">
 		<![CDATA[
 			<script src="//maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry" type="text/javascript"></script>
@@ -58,8 +58,8 @@
 			</p>
 		</div>
 		<div class="col-md-5">
-
-			  <!-- <div id="map" style='width: 100%; height: 400px;'></div> -->
+							<!-- mapa -->
+			  <div id="map" style='width: 100%; height: 400px;'></div>
 
 		</div>
 	</div>
@@ -91,22 +91,21 @@
 		]]>
 	</xsl:text>
 
-	<div id="admin_panel">	
-		<xsl:text disable-output-escaping="yes">
-		<![CDATA[
-		<div id="form-edit">
-			<%= render("form") %>
-		</div>
-		<% if current_user %>
-			<%= link_to " Anuluj", edit_door_path(@door), id: "cancel_edit_door", class: "glyphicon glyphicon-remove-sign text-warning", remote: :true %>
-		 <%= link_to " Edytuj", edit_door_path(@door), id: "edit_door", remote: :true, class: "glyphicon glyphicon-edit text-warning" %><br/>
-		 <%= link_to " Usun", door_path(@door), method: :delete, data: { confirm: "Czy na pewno chcesz usunac?" }, class: "glyphicon glyphicon-remove text-danger" %><br/>
-		<% end %>
-		<br/><%= link_to " Powrot", doors_path, class: "glyphicon glyphicon-arrow-left" %><br/>
-		]]>
-	</xsl:text>
-
-</div>
+		<div id="admin_panel">	
+			<xsl:text disable-output-escaping="yes">
+			<![CDATA[
+			<div id="form-edit">
+				<%= render("form") %>
+			</div>
+			<% if current_user %>
+				<%= link_to " Anuluj", edit_door_path(@door), id: "cancel_edit_door", class: "glyphicon glyphicon-remove-sign text-warning", remote: :true %>
+			 <%= link_to " Edytuj", edit_door_path(@door), id: "edit_door", remote: :true, class: "glyphicon glyphicon-edit text-warning" %><br/>
+			 <%= link_to " Usun", door_path(@door), method: :delete, data: { confirm: "Czy na pewno chcesz usunac?" }, class: "glyphicon glyphicon-remove text-danger" %><br/>
+			<% end %>
+			<br/><%= link_to " Powrot", doors_path, class: "glyphicon glyphicon-arrow-left" %><br/>
+			]]>
+		</xsl:text>
+	</div>
 
 	</xsl:template>
 </xsl:stylesheet>

@@ -4,6 +4,7 @@
 
 <xsl:template match="/">
 
+<!-- część kodu (js/ruby) musiały zostać przeklejone jako czysty tekst  -->
 <xsl:text disable-output-escaping="yes">
 <![CDATA[
 <script src="//maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry" type="text/javascript"></script>

@@ -100,6 +100,7 @@ class DoorsController < ApplicationController
 	  	@door = Door.find(params[:id])
   	end
 
+    # zapisuje wskazane drzwi do postaci markerów na mapie
   	def create_markers(doors)
 	  	hash = Gmaps4rails.build_markers(doors) do |d, marker|
 			  marker.lat d.latitude
@@ -113,17 +114,21 @@ class DoorsController < ApplicationController
   		info = "<div><b>#{door.address}</b><br/><a href='/doors/#{door.id}'>Zobacz więcej</a></div><div align='right'><img src='#{door.image}' width='70' height='80'/></div>"
   	end
 
+     # zapis obiektów drzwi do dokumentu xml aby możliwe było wykorzystanie ich
+     # przy tranformacji xsl
   	def doors_to_xml
 	  	@door_all = Door.all
 	  	door_xml = @door_all.to_xml
 	  	IO.write("app/views/doors/doors.xml", door_xml)  		
   	end
 
+    # utworzenie dokumentu xml dla konkretnych drzwi w celu zaprezentowania ich zawartości.
+    # sposób obejścia niemożności przekazania wartości id konkretnego egzemplarza po przeładowaniu strony
     def create_single_door_xml door_id
       file = File.open 'app/views/doors/doors.xml'
       myxml = REXML::Document.new file
-      door = myxml.elements["doors/door[id='#{door_id}']"]
-      xml_top = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
-      IO.write("app/views/doors/single_door.xml", xml_top + door.to_s)
+      door = myxml.elements["doors/door[id='#{door_id}']"] # symboliczne wykorzystanie xpath
+      xml_top = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" # dopisanie do początku pliku deklaracji xml
+      IO.write("app/views/doors/single_door.xml", xml_top + door.to_s) # zapisanie elementu
     end
 end
