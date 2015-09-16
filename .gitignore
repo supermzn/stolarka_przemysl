@@ -19,3 +19,6 @@
 # Ignore xml files to generate view
 /app/views/doors/doors.xml
 /app/views/doors/single_door.xml
+/app/views/doors/show.html.erb
+/app/views/doors/index.html.erb
+
