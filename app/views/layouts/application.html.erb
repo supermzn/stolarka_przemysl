@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Stolarka Przemyśl | <%= @title %></title>
+  <title>Drzwi Przemyśla | <%= @title %></title>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -16,7 +16,7 @@
 	        <ul class="nav navbar-nav">
 
 	          <li class="<%= 'active' if current_page?(controller: 'site', action: 'index') %>">
-		          <%= link_to "Strona główna",  :controller => 'site', :action => "index"  %>
+		          <%= link_to "Home",  :controller => 'site', :action => "index"  %>
 	          </li>
 
 	          <li class="<%= 'active' if current_page?(controller: 'site', action: 'about') %>">
@@ -45,7 +45,6 @@
  <div class="container">
 	<div class="jumbotron">
 	  <%= yield %>
-	  <%= link_to(image_tag("The-Doors-Wallpapers-3.jpg", size: '400x300'), doors_path)  %>
   </div>
   <%= debug(params) if Rails.env.development? %>
 </div>

@@ -8,30 +8,11 @@
 		<div class="col-md-6">
 			<h1><%= @door.title %></h1>
 			<h3><%= @door.address %></h3>
-			<h4><b>Współrzędne: </b>Long: <%= @door.longitude %> Lat: <%= @door.latitude %></h4>
-			  <button class="prev">Previous</button>
-  <button class="next">Next</button>
+			<h4><b>Współrzędne: </b>Long: <%= @door.longitude %> Lat: <%= @door.latitude %></h4>			
 
-<ul class="slider">
- <li>
-   <img src="http://lorempixel.com/400/200/" />
- </li>
- <li>
-   <img src="http://placeimg.com/400/200/any" />
- </li>
- <li>
-   <img src="http://lorempixel.com/400/200/" />
- </li>
- <li>
-   <img src="http://placeimg.com/400/200/animals" />
- </li>
-  <li>
-   <img src="http://localhost:3000/images/doors/DSC_0226.JPG" height="30%" width="30%" />
- </li>
-</ul>
 		</div>
 		<div class="col-md-6">
-			<%= image_tag "doors/#{@door.image}", height: "40%", width: "40%" %>
+			<%= image_tag "#{@door.image}", height: "40%", width: "40%" %>
 		</div>
 	</div>
 	<br/>
@@ -40,9 +21,7 @@
 			<p><%= @door.description %></br></p>
 		</div>
 		<div class="col-md-5">
-<!-- 			<div style='width: 100%;'> -->
-			  <div id="map" style='width: 100%; height: 400px;'></div>
-			<!-- </div> -->
+		  <div id="map" style='width: 100%; height: 400px;'></div>
 		</div>
 	</div>
 </div>
@@ -68,10 +47,17 @@
 );
 </script>
 
-<div>
-	<% if current_user %>
-		 <%= link_to " Edytuj", edit_door_path(@door), id: "edit_door", remote: :true, class: "glyphicon glyphicon-edit text-warning" %><br/>
-		 <%= link_to " Usuń", door_path(@door), method: :delete, data: { confirm: "Czy na pewno chcesz usunąć?" }, class: "glyphicon glyphicon-remove text-danger" %><br/>
-	<% end %>
-	<br/><%= link_to " Powrót", doors_path, class: "glyphicon glyphicon-arrow-left" %><br/>
-</div>
+<div id="form-edit">
+			<%= render("form") %>
+		</div>
+
+	<div id="admin_panel">		
+		<% if current_user %>
+			<%= link_to " Anuluj", edit_door_path(@door), id: "cancel_edit_door", remote: :true, class: "glyphicon glyphicon-remove-sign text-warning" %>
+			<%= link_to " Edytuj", edit_door_path(@door), id: "edit_door", remote: :true, class: "glyphicon glyphicon-edit text-warning" %><br/>
+			<%= link_to " Usun", door_path(@door), method: :delete, data: { confirm: "Czy na pewno chcesz usunac?" }, class: "glyphicon glyphicon-remove text-danger" %><br/>
+		<% end %>
+		<br/>
+		<%= link_to " Powrot", doors_path, class: "glyphicon glyphicon-arrow-left" %><br/>	
+	</div>
+

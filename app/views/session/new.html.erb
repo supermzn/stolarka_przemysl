@@ -1,5 +1,9 @@
-<%= form_for(:session, url: login_path) do |f| %>
-  <%= f.text_field :login, :placeholder => "Login", :autofocus => true %>
-  <%= f.password_field :password, :placeholder => "Password" %>
-  <%= f.submit "Log in", class: "btn-submit" %>
-<% end %>
+<div class="row">
+	<div class="col col-md-3">
+	<h3>Zaloguj się</h3>
+		<%= form_for(:session, url: login_path) do |f| %>
+		  <%= f.text_field :login, :placeholder => "Login", :autofocus => true %><br/>
+		  <%= f.password_field :password, :placeholder => "Password" %></br>
+		  <%= f.submit "Zaloguj", class: "btn btn-default" %>
+		<% end %>
+</div>

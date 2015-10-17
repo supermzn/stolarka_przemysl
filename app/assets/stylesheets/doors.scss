@@ -2,40 +2,14 @@
 // They will automatically be included in application#css#
 // You can use Sass (SCSS) here: http://sass-lang#com/
 
-.slider {
-  margin: 10px 0;
-  width: 580px; /* Update to your slider width */
-  height: 250px; /* Update to your slider height */
-  position: relative;
-  overflow: hidden;
+#form-edit, #cancel_edit_door{
+  display:none;
 }
 
-.slider li {
-  display: none;
-  position: absolute; 
-  top: 0; 
-  left: 0; 
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
-/*
-
-#slideshow {
-    position:relative;
-    height:150px;
-}
-
-#slideshow IMG {
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:8;
-}
-
-#slideshow IMG#active {
-    z-index:10;
-}
-
-#slideshow IMG#last-active {
-    z-index:9;
-}
-*/

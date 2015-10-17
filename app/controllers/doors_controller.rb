@@ -19,13 +19,16 @@ class DoorsController < ApplicationController
   end
 
   def create
-  	@door = Door.new(door_params)
+    @door = Door.new(door_params)
 
-  	if @door.save
-  		redirect_to doors_path
-		else 
-			render 'new'  		
-  	end
+    if @door.save
+      respond_to do |format|
+        format.html { redirect_to doors_path }
+        format.js { render 'index' }
+      end
+    else 
+      render 'new'      
+    end
   end
 
   def show
@@ -45,7 +48,11 @@ class DoorsController < ApplicationController
 
   def update
   	if @door.update(door_params)
-  		redirect_to door_path(@door)
+  		# redirect_to door_path(@door)
+      respond_to do |format|
+        format.html { redirect_to door_path(@door) }
+        format.js
+      end
   	else
   		render 'edit'
   	end
@@ -90,6 +97,6 @@ class DoorsController < ApplicationController
   	end
 
   	def generate_info_window(door)
-  		info = "<div><b>#{door.address}</b><br/>Super drzwi<br/><a href='/doors/#{door.id}'>Zobacz więcej</a></div><div align='right'><img src='/images/doors/#{door.image}' width='70' height='80'/></div>"
+  		info = "<div><b>#{door.address}</b><br/>Super drzwi<br/><a href='/doors/#{door.id}'>Zobacz więcej</a></div><div align='right'><img src='#{door.image}' width='70' height='80'/></div>"
   	end
 end
