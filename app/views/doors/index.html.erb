@@ -27,7 +27,7 @@
 <div id="list">
 	<% @door.each do |d| %>
 		<div class="well well-sm">
-		 	<u><%= link_to d.title, door_path(d) %></u>
+		 	<%= image_tag d.image, height: '80', width: '70' %> <u><b><%= link_to d.address, door_path(d) %></b></u>
 	 	</div>
  <% end %> 
 </div>

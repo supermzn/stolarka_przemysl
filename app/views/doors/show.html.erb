@@ -8,11 +8,29 @@
 		<div class="col-md-6">
 			<h1><%= @door.title %></h1>
 			<h3><%= @door.address %></h3>
-			<h4><b>Współrzędne: </b>Long: <%= @door.longitude %> Lat: <%= @door.latitude %></h4>			
+			<h4><b>Współrzędne: </b>Long: <%= @door.longitude %> Lat: <%= @door.latitude %></h4>	
+			<div class="well well-sm">
+			  <button id="prev">Wstecz</button>
+			  <button id="next">Dalej</button>
+				<ul class="slider">
+				 <li>
+				  <img src="http://loremflickr.com/320/240/door/?random=1" />
+				 </li>
+				 <li>
+				   <img src="http://loremflickr.com/320/240/door/?random=2" />
+				 </li>
+				 <li>
+				   <img src="http://loremflickr.com/320/240/door/?random=3" />
+				 </li>
+				 <li>
+				   <img src="http://loremflickr.com/320/240/door/?random=4" />
+				 </li>
+				</ul>
+			</div>		
 
 		</div>
 		<div class="col-md-6">
-			<%= image_tag "#{@door.image}", height: "40%", width: "40%" %>
+			<%= image_tag "#{@door.image}", height: "60%", width: "60%" %>
 		</div>
 	</div>
 	<br/>
