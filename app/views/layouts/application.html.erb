@@ -16,7 +16,7 @@
 	        <ul class="nav navbar-nav">
 
 	          <li class="<%= 'active' if current_page?(controller: 'site', action: 'index') %>">
-		          <%= link_to "Home",  :controller => 'site', :action => "index"  %>
+		          <%= link_to "Home",  root_path  %>
 	          </li>
 
 	          <li class="<%= 'active' if current_page?(controller: 'site', action: 'about') %>">

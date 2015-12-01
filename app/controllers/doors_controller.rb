@@ -1,8 +1,13 @@
+require 'net/http'
+require 'net/https'
+require 'json'
+
 class DoorsController < ApplicationController
   before_action :find_door, only: [:show, :destroy, :edit, :update]
   before_action :street_only, only: [:show]
   before_action :protect, only: [:edit, :new, :destroy]
-  add_breadcrumb "Lista Drzwi", :doors_path
+  helper_method :imgur
+  # add_breadcrumb "Lista Drzwi", :doors_path
 
   def index
   	@door = Door.all
@@ -99,4 +104,27 @@ class DoorsController < ApplicationController
   	def generate_info_window(door)
   		info = "<div><b>#{door.address}</b><br/>Super drzwi<br/><a href='/doors/#{door.id}'>Zobacz więcej</a></div><div align='right'><img src='#{door.image}' width='70' height='80'/></div>"
   	end
+
+    def imgur    
+      # puts "Let's get some pics"
+
+      headers    = {
+        "Authorization" => "Client-ID 71d7078461a9c27"
+      }
+
+      #http       = Net::HTTP.new("https://api.imgur.com")
+      path       = "/3/album/s8YMe.json"
+      uri = URI.parse("https://api.imgur.com"+path)
+      request, data = Net::HTTP::Get.new(path, headers)
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.use_ssl = true
+      response = http.request(request)
+      # puts response.body
+      parsed = JSON.parse(response.body.to_s)
+      # puts '********************'
+      # parsed["data"]["images"].each do |img|
+      #   puts "#{img['datetime']}, #{img['title']}, #{img['description']}"
+      # end
+      parsed["data"]["images"][1]["id"]  #alternatywne wybieranie z tablicy elementów
+    end
 end
