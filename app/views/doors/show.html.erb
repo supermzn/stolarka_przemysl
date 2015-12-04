@@ -17,7 +17,7 @@
 					img[id] is used for retrievieng image's inforamtions
 					x.jpg is size of thumbnail responded from API
 					more here: http://api.imgur.com/models/image -->
-					<% imgur["data"]["images"].each do |img| %>
+					<% imgur(@door.image)["data"]["images"].each do |img| %>
 						<li>
 							<%= image_tag "https://i.imgur.com/" + img["id"] + "b.jpg" %><br/>
 							<b>Opis: </b><%= img["description"] %>
@@ -30,7 +30,7 @@
 		</div>
 		<div class="col-md-6">
 
-			<%= image_tag "https://i.imgur.com/" + imgur["data"]["images"][0]["id"] + ".jpg", height: "60%", width: "60%" %>
+			<%= image_tag "https://i.imgur.com/" + imgur(@door.image)["data"]["images"][0]["id"] + ".jpg", height: "60%", width: "60%" %>
 		</div>
 	</div>
 	<br/>

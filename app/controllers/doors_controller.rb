@@ -105,7 +105,7 @@ class DoorsController < ApplicationController
   		info = "<div><b>#{door.address}</b><br/>Super drzwi<br/><a href='/doors/#{door.id}'>Zobacz więcej</a></div><div align='right'><img src='#{door.image}' width='70' height='80'/></div>"
   	end
 
-    def imgur#(album_id)     
+    def imgur(album_id)     
       # puts "Let's get some pics"
 
       headers    = {
@@ -113,7 +113,7 @@ class DoorsController < ApplicationController
       }
 
       #http       = Net::HTTP.new("https://api.imgur.com")
-      path       = "/3/album/#{@door.image}.json"
+      path       = "/3/album/#{album_id}.json"
       uri = URI.parse("https://api.imgur.com"+path)
       request, data = Net::HTTP::Get.new(path, headers)
       http = Net::HTTP.new(uri.host, uri.port)
