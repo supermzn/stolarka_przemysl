@@ -16,5 +16,4 @@
 !/log/.keep
 /tmp
 
-# imgur Client ID: 	71d7078461a9c27
-# imgur secret: 		8c9cf2ba3dc5518fd0c102839e3b47b06fed1f6b
+/secrets

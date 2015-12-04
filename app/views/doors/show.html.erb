@@ -13,25 +13,24 @@
 			  <button id="prev">Wstecz</button>
 			  <button id="next">Dalej</button>
 				<ul class="slider">
-				 <li>
-				  <img src="http://loremflickr.com/320/240/door/?random=1" />
-				 </li>
-				 <li>
-				   <img src="http://loremflickr.com/320/240/door/?random=2" />
-				 </li>
-				 <li>
-				   <img src="http://loremflickr.com/320/240/door/?random=3" />
-				 </li>
-				 <li>
-				   <img src="http://loremflickr.com/320/240/door/?random=4" />
-				 </li>
+				<!-- Link description:
+					img[id] is used for retrievieng image's inforamtions
+					x.jpg is size of thumbnail responded from API
+					more here: http://api.imgur.com/models/image -->
+					<% imgur["data"]["images"].each do |img| %>
+						<li>
+							<%= image_tag "https://i.imgur.com/" + img["id"] + "b.jpg" %><br/>
+							<b>Opis: </b><%= img["description"] %>
+						</li>
+						
+					<% end %>
 				</ul>
 			</div>		
 
 		</div>
 		<div class="col-md-6">
 
-			<%= image_tag "http://i.imgur.com/#{imgur}.jpg", height: "60%", width: "60%" %>
+			<%= image_tag "https://i.imgur.com/" + imgur["data"]["images"][0]["id"] + ".jpg", height: "60%", width: "60%" %>
 		</div>
 	</div>
 	<br/>
