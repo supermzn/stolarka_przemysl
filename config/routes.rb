@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'site/about'
   get 'site/help'
   get 'site/index'
+  get 'site/about_project'
 
 
 
