@@ -1,0 +1,22 @@
+    <style type="text/css">
+    .alert {
+    	display: none;
+    }
+    </style>
+    
+    <script>
+    $(document).ready(function(){   
+        window.setTimeout('fadein();', 500);
+    });
+
+    function fadein(){
+        $('.alert').fadeIn('slow', function() {
+           // Animation complete.
+        });
+    }
+
+    </script>
+
+<div class="alert alert-danger">
+	<h4>Ta strona jest w przygotowaniu i pojawi się już niedługo.<h4>
+</div>

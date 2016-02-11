@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # get 'doors/show'
 
-  root 'doors#index'
+  root 'site#index'
 
   resources :doors
 
@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get 'site/help'
   get 'site/index'
   get 'site/about_project'
+  get 'site/under_construction'
 
 
 
