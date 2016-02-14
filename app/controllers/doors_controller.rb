@@ -7,13 +7,13 @@ class DoorsController < ApplicationController
   before_action :street_only, only: [:show]
   before_action :protect, only: [:edit, :new, :destroy]
   helper_method :imgur
-  # add_breadcrumb "Lista Drzwi", :doors_path
 
   def index
   	@door = Door.all
   	@hash = create_markers(@door)
   	###############
   	@title = "Index"
+    add_breadcrumb "Mapa", :doors_path
   end
 
   def new
