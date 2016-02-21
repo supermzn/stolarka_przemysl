@@ -9,7 +9,7 @@ class DoorsController < ApplicationController
   helper_method :imgur
 
   def index
-  	@door = Door.all
+  	@door = Door.all.order!(:id)
   	@hash = create_markers(@door)
   	###############
   	@title = "Index"
