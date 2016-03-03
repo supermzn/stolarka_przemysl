@@ -1,7 +1,7 @@
 class SiteController < ApplicationController
 
   def index
-    @title = "Home"
+    @title = "Strona główna"
   end
 
   def doors
@@ -12,6 +12,11 @@ class SiteController < ApplicationController
   def about
     @title = "O nas"
     add_breadcrumb "#{@title}", :site_about_path
+  end
+
+  def news
+    @title = "Aktualności"
+    add_breadcrumb "#{@title}", :site_news_path
   end
 
   def help

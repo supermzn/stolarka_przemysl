@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'session/index'
   get 'site/doors'
   get 'site/about'
+  get 'site/news'
   get 'site/help'
   get 'site/index'
   get 'site/about_project'

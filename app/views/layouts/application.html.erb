@@ -1,64 +1,62 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Drzwi Przemyśla | <%= @title %></title>
+<html lang="pl-PL">
+	<head>
+	  <title>Drzwi Przemyśla | <%= @title %></title>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+
+		<div class="container">
+		  <nav class="navbar navbar-inverse">
+		    <div class="container-fluid">
+		      <div>
+		        <ul class="nav navbar-nav">
+
+		          <li class="<%= 'active' if current_page?(controller: 'site', action: 'index') %>">
+			          <%= link_to "O projekcie",  root_path  %>
+		          </li>
+
+		          <li class="<%= 'active' if current_page?(controller: 'doors', action: 'index') %>">
+		          	<%= link_to "Katalog drzwi",  :controller => 'doors', :action => "index" %>
+		          </li>
+
+		          <li class="<%= 'active' if current_page?(controller: 'site', action: 'about') %>">
+		          	<%= link_to "O nas",  :controller => 'site', :action => "about" %>
+		          </li>
+
+		          <li>
+		          	<%= link_to "Rozpoznanie i problematyka konserwatorska", :controller => 'site', :action => "under_construction"  %>
+		          </li>
+
+		          <li>
+		          	<%= link_to "Bibliografia", :controller => 'site', :action => "under_construction"  %>
+		          </li>
+
+		          <li class="<%= 'active' if current_page?(controller: 'site', action: 'help') %>">
+		          	<%= link_to "Pomoc", :controller => 'site', :action => "help"  %>
+		          </li>
+
+		          <li>
+		          	<%= link_to "Aktualności", :controller => 'site', :action => "news"  %>
+		          </li>
+
+		        </ul>
+		      </div>
+		    </div>
+		  </nav>
+		  	      <%= render_breadcrumbs :separator => " / " %>
+
+	  </div>
+
 
 	<div class="container">
-	  <nav class="navbar navbar-inverse">
-	    <div class="container-fluid">
-	      <div>
-	        <ul class="nav navbar-nav">
-
-	          <li class="<%= 'active' if current_page?(controller: 'site', action: 'index') %>">
-		          <%= link_to "O projekcie",  root_path  %>
-	          </li>
-
-	          <li class="<%= 'active' if current_page?(controller: 'doors', action: 'index') %>">
-	          	<%= link_to "Katalog drzwi",  :controller => 'doors', :action => "index" %>
-	          </li>
-
-	          <li class="<%= 'active' if current_page?(controller: 'site', action: 'about') %>">
-	          	<%= link_to "O nas",  :controller => 'site', :action => "about" %>
-	          </li>
-
-	          <li>
-	          	<%= link_to "Rozpoznanie i problematyka konserwatorska", :controller => 'site', :action => "under_construction"  %>
-	          </li>
-
-	          <li>
-	          	<%= link_to "Bibliografia", :controller => 'site', :action => "under_construction"  %>
-	          </li>
-
-	          <li class="<%= 'active' if current_page?(controller: 'site', action: 'help') %>">
-	          	<%= link_to "Pomoc", :controller => 'site', :action => "help"  %>
-	          </li>
-	        </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <% if !current_user %>
-              <li><%= link_to "Login", :controller => 'session', :action => "new"  %></li>
-            <% else %>
-              <li><%= link_to "Logout", :controller => 'session', :action => "destroy"  %></li>
-            <% end %>
-          </ul>
-	      </div>
-	    </div>
-	  </nav>
-	  	      <%= render_breadcrumbs :separator => " / " %>
-
-  </div>
-
-
- <div class="container">
-	<div class="jumbotron">
-	  <%= yield %>
-  </div>
-  <%= debug(params) if Rails.env.development? %>
-</div>
-</body>
+		<div class="jumbotron">
+		  <%= yield %>
+	  </div>
+	  <%= debug(params) if Rails.env.development? %>
+		</div>
+	</body>
 </html>
