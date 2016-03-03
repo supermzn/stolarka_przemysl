@@ -14,14 +14,15 @@
 		    <div class="container-fluid">
 		      <div>
 		        <ul class="nav navbar-nav">
-
-		          <li class="<%= 'active' if current_page?(controller: 'site', action: 'index') %>">
-			          <%= link_to "O projekcie",  root_path  %>
-		          </li>
-
+		        	
 		          <li class="<%= 'active' if current_page?(controller: 'doors', action: 'index') %>">
 		          	<%= link_to "Katalog drzwi",  :controller => 'doors', :action => "index" %>
 		          </li>
+
+		          <li class="<%= 'active' if current_page?(controller: 'site', action: 'about_project') %>">
+			          <%= link_to "O projekcie", :controller => 'site', :action => "about_project"  %>
+		          </li>
+
 
 		          <li class="<%= 'active' if current_page?(controller: 'site', action: 'about') %>">
 		          	<%= link_to "O nas",  :controller => 'site', :action => "about" %>
@@ -39,8 +40,8 @@
 		          	<%= link_to "Pomoc", :controller => 'site', :action => "help"  %>
 		          </li>
 
-		          <li>
-		          	<%= link_to "Aktualności", :controller => 'site', :action => "news"  %>
+		          <li class="<%= 'active' if current_page?(controller: 'site', action: 'news') %>">
+		          	<%= link_to "Aktualności", root_path  %>
 		          </li>
 
 		        </ul>

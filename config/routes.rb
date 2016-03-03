@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   # get 'doors/show'
 
-  root 'site#index'
+  root 'site#news'
 
   resources :doors
 
