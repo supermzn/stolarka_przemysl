@@ -15,6 +15,7 @@ class DoorsController < ApplicationController
   	@title = "Index"
     @street = ["Grunwaldzka", "Okrzei", "Św. Jana Nepomucena"]
     add_breadcrumb "Mapa", :doors_path
+    p @hash
   end
 
   def new

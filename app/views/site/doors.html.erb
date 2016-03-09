@@ -1,3 +1,18 @@
+<div class="highslide-gallery">
+
+
+<a href="https://i.imgur.com/ueFg3lb.jpg" class="highslide" onclick="return hs.expand(this)">
+  <img src="../images/Jimm.jpg" alt="Highslide JS"
+    title="Click to enlarge" height="120" width="107" /></a>
+
+
+<div class="highslide-caption">
+  This caption can be styled using CSS.
+</div>
+</div>
+
+<div id="map" style='width: 100%; height: 400px;'></div>
+
 
 <h2>Drzwi Przemyśla</h2>
 <p>
@@ -35,3 +50,30 @@
     </svg>
   </a>
 </div>
+
+
+
+
+    <script>
+      var map;
+      var pinLocation = [{lat: 49.78621620000001, lng: 22.7643036}, {lat: 49.98621620000001, lng: 22.8643036}];
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 49.78621620000001, lng: 22.7643036},
+          // center: pinLocation,
+          zoom: 9
+        });
+        var data = new google.maps.LatLng(pinLocation[1].lat, pinLocation[1].lng);
+        marker = new google.maps.Marker({
+          // position: pinLocation[i],
+          position: data,
+          map: map,
+          title: 'Hello World!'
+        });
+        
+      }
+    </script>
+
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0A4nZwcDDlyyHlQ2dOS4i34NmkXoUTcs  &callback=initMap">
+    </script>
