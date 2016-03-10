@@ -21,33 +21,11 @@ input, textarea, select, .uneditable-input {
   margin-bottom: 15px;
 }
 
-.slider {
-  margin: 10px 0;
-  height: 250px;
-  position: relative;
-  overflow: hidden;
+.highslide-gallery {
+  border-color: #ddd;
+  border-radius: 16px 16px
 }
 
-.slider li {
-  display: none;
-  list-style: none;
-  position: absolute; 
-  top: 0; 
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, 10%); 
-}
-
-
-#prev, #next {
-	position: absolute;
-	width: 70px;
-}
-
-#prev {
-  left: 50px;
-}
-
-#next {
-  right: 50px;
+#thumbnail {
+  
 }
