@@ -14,6 +14,11 @@ class SiteController < ApplicationController
     add_breadcrumb "#{@title}", :site_about_path
   end
 
+  def about_project
+    @title = "O projekcie"
+    add_breadcrumb "#{@title}", :site_about_project_path
+  end
+
   def news
     @title = "Aktualności"
     add_breadcrumb "#{@title}", :site_news_path

@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   # get 'doors/create'
 
-  # get 'doors/show'
 
   root 'site#news'
 
   resources :doors
+  get 'doors/show'
 
   get 'users/new'
 

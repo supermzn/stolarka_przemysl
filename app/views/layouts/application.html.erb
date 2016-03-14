@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pl-PL">
 	<head>
-	  <title>Drzwi Przemyśla | <%= @title %></title>
+	  <title><%= current_page?(controller: 'doors', action: 'show') ? "#{@door.address} - " : "#{@title} - " %>Drzwi Przemyśla</title>
+	  <meta name="description" content="Udostępniony katalog zabytkowych drzwi oraz stolarki okiennej w kamienicach Przemyśla.">
 
 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
