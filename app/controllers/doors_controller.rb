@@ -69,6 +69,7 @@ class DoorsController < ApplicationController
   	redirect_to doors_path
   end
 
+
   private
 
   	def door_params
