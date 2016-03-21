@@ -35,26 +35,6 @@
 	</div>
 </div>
 
-<script type="text/javascript">
-	handler = Gmaps.build('Google');
-	handler.buildMap({
-    provider: {},
-    internal: {
-      id: 'map'
-    }
-  },
-  function(){
-    markers = handler.addMarkers(<%= raw @hash.to_json %>);
-    // markers are indexed [0..N], but doors have their's own ids
-    // need to center on current door, then focus on specified marker
-    single_marker = handler.addMarkers(<%= raw @hash_single.to_json %>
-);
-    handler.map.centerOn(single_marker[0]); //allways 0 because there's only one
-    handler.fitMapToBounds();
-    handler.getMap().setZoom(18);
-  }
-);
-</script>
 
 <div id="form-edit">
 			<%= render("form") %>
@@ -70,3 +50,46 @@
 		<%= link_to " Powrot", doors_path, class: "glyphicon glyphicon-arrow-left" %><br/>	
 	</div>
 
+
+<script type="text/javascript">
+// miejsce na skrypt gmaps.js
+// setTimeout(initMap, 2000);
+// function initMap() {
+	var jsonMarker = JSON.parse(JSON.stringify(<%= @door_all.to_json(:only => [:latitude, :longitude, :title, :id, :address]).html_safe %>)); 
+
+	var map;
+	var currentParamId = <%= params[:id] %>;
+	var currentMarkerId = findCurrentMarkerId(jsonMarker, currentParamId);
+	$(document).ready(function(){
+	  map = new GMaps({
+	    div: '#map',
+	    lat: jsonMarker[currentMarkerId].latitude,
+	    lng: jsonMarker[currentMarkerId].longitude
+	  });
+	  for(var i = 0; i < jsonMarker.length; i++) {
+	  	var infoContent = "<b>" + jsonMarker[i].address + "</b>"
+		  map.addMarker({
+		  	lat: jsonMarker[i].latitude,
+		  	lng: jsonMarker[i].longitude,
+		  	title: jsonMarker[i].title,
+		  	infoWindow: {
+		  		content: infoContent
+		  	}
+		  });
+	  }
+	  //albo centrowanie do aktualnego markera, albo centrowanie z widocznymi wszyskimi:
+	  // map.fitZoom();
+	});
+
+	function findCurrentMarkerId(markers, param) {
+		for(var i = 0; i < jsonMarker.length; i++) {
+			if(jsonMarker[i].id == param) {
+				return i;
+			}
+		}
+	};
+// }
+
+
+</script>
+<script src="//maps.google.com/maps/api/js?v=3.24&key=AIzaSyA0A4nZwcDDlyyHlQ2dOS4i34NmkXoUTcs&libraries=geometry&language=&hl=&region="></script>

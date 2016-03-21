@@ -40,10 +40,12 @@ class DoorsController < ApplicationController
   def show
   	add_breadcrumb "Przegląd", door_path(@door)
   	@door_all = Door.all
-  	@hash = create_markers(@door_all)
-  	@hash_single = create_markers(@door)
+  	# @hash = create_markers(@door_all)
+  	# @hash_single = create_markers(@door)
   	#######################
   	@title = "Przegląd"
+
+    puts @door_all.to_json.to_s.html_safe
   end
 
   def edit

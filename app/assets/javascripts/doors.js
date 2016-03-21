@@ -18,15 +18,3 @@ jQuery(function($) {
   });
 })
 
-function addMapScripts() {
-//TODO  Utworzyć element sctipt do wczytania mapy i wywołać to w try'u
-}
-
-addMapScripts();
-// try {
-//   addMapScripts();
-// }
-// catch(err) {
-//     window.alert(err);
-//     location.reload();
-// }
