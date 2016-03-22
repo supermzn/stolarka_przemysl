@@ -1,3 +1,6 @@
+<!-- prevents ajax request, which imports maps many times between requests -->
+<%= content_for(:body_attributes) do %>data-no-turbolink<% end %>
+c
 <div id="door_description">
 	<div class="row">
 		<div class="highslide-gallery">
@@ -67,7 +70,7 @@
 	    lng: jsonMarker[currentMarkerId].longitude
 	  });
 	  for(var i = 0; i < jsonMarker.length; i++) {
-	  	var infoContent = "<b>" + jsonMarker[i].address + "</b>"
+	  	var infoContent = "<b>" + jsonMarker[i].address + "</b><br/><a href='/doors/" + jsonMarker[i].id + "'>Zobacz więcej</a>"
 		  map.addMarker({
 		  	lat: jsonMarker[i].latitude,
 		  	lng: jsonMarker[i].longitude,
@@ -77,6 +80,7 @@
 		  	}
 		  });
 	  }
+	  map.setZoom(18);
 	  //albo centrowanie do aktualnego markera, albo centrowanie z widocznymi wszyskimi:
 	  // map.fitZoom();
 	});

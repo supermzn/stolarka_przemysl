@@ -1,3 +1,6 @@
+<!-- prevents ajax request, which imports maps many times between requests -->
+<%= content_for(:body_attributes) do %>data-no-turbolink<% end %>
+
 <% if current_user %>
 	<%= link_to "Dodaj nowe drzwi", new_door_path, class: "btn btn-primary" %>
 <% end %>
@@ -11,7 +14,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" href="#<%= str.delete(' ').delete('.') %>"><%= str %></a>
+        <a data-toggle="collapse" href="#<%= str.delete(' ').delete('.') %>"><span class="glyphicon glyphicon-chevron-down"></span> <%= str %></a>
       </h4>
     </div>
     <div id="<%= str.delete(' ').delete('.') %>" class="panel-collapse collapse">
@@ -30,6 +33,7 @@
           <% end %>         
         <% end %> 
       </ul>
+      <div class="panel-footer"><a data-toggle="collapse" href="#<%= str.delete(' ').delete('.') %>">Zwiń <span class="glyphicon glyphicon-chevron-up"></span></a></div>
     </div>
   </div>
 </div>

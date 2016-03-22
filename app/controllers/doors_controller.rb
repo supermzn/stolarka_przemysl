@@ -10,7 +10,7 @@ class DoorsController < ApplicationController
 
   def index
   	@door = Door.all.order!(:id)
-  	@hash = create_markers(@door)
+  	# @hash = create_markers(@door)
   	###############
   	@title = "Index"
     @street = ["Grunwaldzka", "Okrzei", "Św. Jana Nepomucena"]
@@ -44,8 +44,6 @@ class DoorsController < ApplicationController
   	# @hash_single = create_markers(@door)
   	#######################
   	@title = "Przegląd"
-
-    puts @door_all.to_json.to_s.html_safe
   end
 
   def edit

@@ -17,4 +17,3 @@ jQuery(function($) {
     // $('#cancel_edit_door').show();
   });
 })
-

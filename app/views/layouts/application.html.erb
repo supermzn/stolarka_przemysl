@@ -11,14 +11,14 @@
 
 
 
-<script type="text/javascript">
-	hs.graphicsDir = '../assets/graphics/';
-	hs.wrapperClassName = 'wide-border';
-</script>
+	<script type="text/javascript">
+		hs.graphicsDir = '../assets/graphics/';
+		hs.wrapperClassName = 'wide-border';
+	</script>
 
 
 	</head>
-	<body>
+	<body <%= yield(:body_attributes) %>>
 
 		<div class="container">
 		  <nav class="navbar navbar-inverse">
