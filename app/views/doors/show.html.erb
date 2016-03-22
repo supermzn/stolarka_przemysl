@@ -1,6 +1,5 @@
 <!-- prevents ajax request, which imports maps many times between requests -->
 <%= content_for(:body_attributes) do %>data-no-turbolink<% end %>
-c
 <div id="door_description">
 	<div class="row">
 		<div class="highslide-gallery">
@@ -54,6 +53,8 @@ c
 	</div>
 
 
+<script src="//maps.google.com/maps/api/js?v=3.24&key=AIzaSyA0A4nZwcDDlyyHlQ2dOS4i34NmkXoUTcs&libraries=geometry&language=&hl=&region="></script>
+
 <script type="text/javascript">
 // miejsce na skrypt gmaps.js
 // setTimeout(initMap, 2000);
@@ -96,4 +97,3 @@ c
 
 
 </script>
-<script src="//maps.google.com/maps/api/js?v=3.24&key=AIzaSyA0A4nZwcDDlyyHlQ2dOS4i34NmkXoUTcs&libraries=geometry&language=&hl=&region="></script>
