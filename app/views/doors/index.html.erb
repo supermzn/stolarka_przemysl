@@ -56,9 +56,6 @@
  <% end %> 
 </div> -->
 
-
-<script src="//maps.google.com/maps/api/js?v=3.24&key=AIzaSyA0A4nZwcDDlyyHlQ2dOS4i34NmkXoUTcs&libraries=geometry&language=&hl=&region="></script>
-
 <script type="text/javascript">
 // miejsce na skrypt gmaps.js
 // setTimeout(initMap, 2000);
@@ -66,14 +63,14 @@
   var jsonMarker = JSON.parse(JSON.stringify(<%= @door.to_json(:only => [:latitude, :longitude, :title, :id, :address]).html_safe %>)); 
 
   var map;
-  $(document).ready(function(){
+  function initMap(){
     map = new GMaps({
       div: '#map',
       lat: 49.786505,
       lng: 22.76249
     });
     for(var i = 0; i < jsonMarker.length; i++) {
-      var infoContent = "<b>" + jsonMarker[i].address + "</b>"
+      var infoContent = "<b>" + jsonMarker[i].address + "</b><br/><a href='/doors/" + jsonMarker[i].id + "'>Zobacz więcej</a>"
       map.addMarker({
         lat: jsonMarker[i].latitude,
         lng: jsonMarker[i].longitude,
@@ -85,12 +82,11 @@
     }
     //albo centrowanie do aktualnego markera, albo centrowanie z widocznymi wszyskimi:
     map.fitZoom();
-  });
+  };
 // }
-
-
 </script>
 
+<script src="//maps.google.com/maps/api/js?v=3.24&key=AIzaSyA0A4nZwcDDlyyHlQ2dOS4i34NmkXoUTcs&libraries=geometry&language=&hl=&region=&&callback=initMap" async defer></script>
 
 
 

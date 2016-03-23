@@ -53,7 +53,7 @@
 	</div>
 
 
-<script src="//maps.google.com/maps/api/js?v=3.24&key=AIzaSyA0A4nZwcDDlyyHlQ2dOS4i34NmkXoUTcs&libraries=geometry&language=&hl=&region="></script>
+
 
 <script type="text/javascript">
 // miejsce na skrypt gmaps.js
@@ -64,7 +64,7 @@
 	var map;
 	var currentParamId = <%= params[:id] %>;
 	var currentMarkerId = findCurrentMarkerId(jsonMarker, currentParamId);
-	$(document).ready(function(){
+	function initMap(){
 	  map = new GMaps({
 	    div: '#map',
 	    lat: jsonMarker[currentMarkerId].latitude,
@@ -84,7 +84,7 @@
 	  map.setZoom(18);
 	  //albo centrowanie do aktualnego markera, albo centrowanie z widocznymi wszyskimi:
 	  // map.fitZoom();
-	});
+	};
 
 	function findCurrentMarkerId(markers, param) {
 		for(var i = 0; i < jsonMarker.length; i++) {
@@ -94,6 +94,6 @@
 		}
 	};
 // }
-
-
 </script>
+
+<script src="//maps.google.com/maps/api/js?v=3.24&key=AIzaSyA0A4nZwcDDlyyHlQ2dOS4i34NmkXoUTcs&libraries=geometry&language=&hl=&region=&&callback=initMap" async defer></script>
