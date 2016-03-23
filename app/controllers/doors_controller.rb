@@ -13,7 +13,7 @@ class DoorsController < ApplicationController
   	# @hash = create_markers(@door)
   	###############
   	@title = "Index"
-    @street = ["Grunwaldzka", "Okrzei", "Św. Jana Nepomucena"]
+    @street = ["3 Maja", "Barska", "Długosza", "Felicjanek", "Grunwaldzka", "Grzegorza z Sanoka", "Kasprowicza", "Okrzei", "Piotra Skargi", "Poniatowskiego", "Św. Jana Nepomucena", "Św. Józefa"]
     add_breadcrumb "Mapa", :doors_path
   end
 
