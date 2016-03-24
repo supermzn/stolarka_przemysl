@@ -3,7 +3,11 @@
 	<head>
 	  <title><%= current_page?(controller: 'doors', action: 'show') ? "#{@door.address} - " : "#{@title} - " %>Drzwi Przemyśla</title>
 	  <meta name="description" content="Udostępniony katalog zabytkowych drzwi oraz stolarki okiennej w kamienicach Przemyśla.">
-	  <meta charset="UTF-8">
+	  <meta name="robots" content="index, follow">
+	  <meta http-equiv="content-language" content="pl">
+		<meta http-equiv="content-type" content="text/html;UTF-8">
+		<meta http-equiv="cache-control" content="cache">
+		<meta http-equiv="revisit-after" content="3 days">
 
 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -19,16 +23,6 @@
 
 	</head>
 	<body <%= yield(:body_attributes) %>>
-	<!-- Google Tag Manager -->
-		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-NXB6ZQ"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-NXB6ZQ');</script>
-	<!-- End Google Tag Manager -->
-
 		<div class="container">
 		  <nav class="navbar navbar-inverse">
 		    <div class="container-fluid">
