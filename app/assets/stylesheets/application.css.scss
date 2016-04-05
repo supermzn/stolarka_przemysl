@@ -22,7 +22,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
+
+
+html, body {
+	height: 100%;
 	font-family: "Times New Roman";
 }
 
@@ -34,5 +37,26 @@ body {
 	}
 }
 
+.wrapper {
+	min-height:100%;
+	height: auto !important;
+	margin: 0 auto -70px;
+	position:relative;
+}
+
+.content {
+	padding-bottom:90px;
+}
+
+footer {
+	height:50px;
+	width: 100%;
+	position:absolute;
+	bottom:0;
+}
+
+#authors {
+	text-align: center;
+}
 
 
