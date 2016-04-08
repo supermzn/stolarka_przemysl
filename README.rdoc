@@ -1,5 +1,3 @@
 == README
 Working deployed on Heroku:
-https://stark-cove-1980.herokuapp.com
-
-If something doesn't work press F5 to refresh page.
+http://drzwiprzemysla.pl
