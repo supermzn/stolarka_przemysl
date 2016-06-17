@@ -29,8 +29,9 @@
 			    <!-- <div class="container-fluid"> -->
 			      <div>
 			        <ul class="nav navbar-nav">
+
 				      	<li class="navbar-header">
-					      	<%= link_to(image_tag("baner.jpg", height: '200'), :controller => 'doors', :action => "index" %>
+					      	<%= link_to(image_tag("baner.jpg", height: '200'), :controller => 'doors', :action => "index") %>
 				      	</li>
 			      	
 			          <li class="<%= 'active' if current_page?(controller: 'doors', action: 'index') %>">
