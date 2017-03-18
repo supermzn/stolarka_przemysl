@@ -1,16 +1,16 @@
 source 'https://rubygems.org'
 
-ruby "2.2.4"
+ruby "2.3.3"
 gem 'rails',        '4.2.0'
 gem 'sass-rails',   '5.0.2'
 gem 'bootstrap-sass',	'3.2.0'
-gem 'simple_form', '~> 3.1.0'
+gem 'simple_form', '~> 3.4'
 gem	'autoprefixer-rails'
 gem 'uglifier',     '2.5.3'
 gem 'coffee-rails', '4.1.0'
 gem 'jquery-rails', '4.0.3'
 gem 'turbolinks',   '2.3.0'
-gem 'jbuilder',     '2.2.3'
+gem 'jbuilder',     '2.6.3'
 gem 'sdoc',         '0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem "breadcrumbs_on_rails"
