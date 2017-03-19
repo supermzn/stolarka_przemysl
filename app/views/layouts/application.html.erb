@@ -19,57 +19,60 @@
 		hs.graphicsDir = '../assets/graphics/';
 		hs.wrapperClassName = 'wide-border';
 	</script>
-
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	  (adsbygoogle = window.adsbygoogle || []).push({
+	    google_ad_client: "ca-pub-6856361960802445",
+	    enable_page_level_ads: true
+	  });
+	</script>
 
 	</head>
 	<body <%= yield(:body_attributes) %>>
 		<div class="wrapper">
-			<div class="container">
-			  <nav class="navbar navbar-inverse">
-			    <!-- <div class="container-fluid"> -->
-			      <div>
-			        <ul class="nav navbar-nav">
+			<div class="container" >
+		      	<%= link_to(image_tag("baner.jpg", width: '100%'), :controller => 'doors', :action => "index") %>
+				<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div>
+						<ul class="nav navbar-nav">
+							<li class="<%= 'active' if current_page?(controller: 'site', action: 'news') %>">
+								<%= link_to "Aktualności", root_path  %>
+							</li>
 
-				      	<li class="navbar-header">
-					      	<%= link_to(image_tag("baner.jpg", height: '200'), :controller => 'doors', :action => "index") %>
-				      	</li>
-			      	
-			          <li class="<%= 'active' if current_page?(controller: 'doors', action: 'index') %>">
-			          	<%= link_to "Katalog drzwi",  :controller => 'doors', :action => "index" %>
-			          </li>
+							<li class="<%= 'active' if current_page?(controller: 'doors', action: 'index') %>">
+								<%= link_to "Katalog drzwi",  :controller => 'doors', :action => "index" %>
+							</li>
 
-			          <li class="<%= 'active' if current_page?(controller: 'site', action: 'about_project') %>">
-				          <%= link_to "O projekcie", :controller => 'site', :action => "about_project"  %>
-			          </li>
+							<li>
+								<%= link_to "Rozpoznanie i problematyka konserwatorska", :controller => 'site', :action => "under_construction"  %>
+							</li>
+
+							<li>
+								<%= link_to "Bibliografia", :controller => 'site', :action => "bibliography"  %>
+							</li>
+
+							<li class="<%= 'active' if current_page?(controller: 'site', action: 'about_project') %>">
+								<%= link_to "O projekcie", :controller => 'site', :action => "about_project"  %>
+							</li>
 
 
-			          <li class="<%= 'active' if current_page?(controller: 'site', action: 'about') %>">
-			          	<%= link_to "O nas",  :controller => 'site', :action => "about" %>
-			          </li>
+							<li class="<%= 'active' if current_page?(controller: 'site', action: 'about') %>">
+								<%= link_to "O nas",  :controller => 'site', :action => "about" %>
+							</li>
 
-			          <li>
-			          	<%= link_to "Rozpoznanie i problematyka konserwatorska", :controller => 'site', :action => "under_construction"  %>
-			          </li>
+							<li class="<%= 'active' if current_page?(controller: 'site', action: 'help') %>">
+								<%= link_to "Pomoc", :controller => 'site', :action => "help"  %>
+							</li>
 
-			          <li>
-			          	<%= link_to "Bibliografia", :controller => 'site', :action => "under_construction"  %>
-			          </li>
 
-			          <li class="<%= 'active' if current_page?(controller: 'site', action: 'help') %>">
-			          	<%= link_to "Pomoc", :controller => 'site', :action => "help"  %>
-			          </li>
+						</ul>
+					</div>
+				</div>
+				</nav>
+				<%= render_breadcrumbs :separator => " / " %>
 
-			          <li class="<%= 'active' if current_page?(controller: 'site', action: 'news') %>">
-			          	<%= link_to "Aktualności", root_path  %>
-			          </li>
-
-			        </ul>
-			      </div>
-			    <!-- </div> -->
-			  </nav>
-			  	      <%= render_breadcrumbs :separator => " / " %>
-
-		  </div>
+				</div>
 
 
 			<div class="container content">

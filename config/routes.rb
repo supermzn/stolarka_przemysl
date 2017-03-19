@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'site/index'
   get 'site/about_project'
   get 'site/under_construction'
+  get 'site/bibliography'
 
 
 

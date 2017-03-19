@@ -28,4 +28,10 @@ class SiteController < ApplicationController
     @title = "Pomoc"
     add_breadcrumb "#{@title}", :site_help_path 
   end
+
+  def bibliography
+    @title = "Bibliografia"
+    add_breadcrumb "#{@title}", :site_bibliography_path
+  end
+
 end
